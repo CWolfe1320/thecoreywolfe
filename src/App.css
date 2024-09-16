@@ -1,0 +1,15 @@
+.siteContainer {
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+.navigatorContainer{
+  margin-left: 120px;
+}
+
+@media (max-width: 800px) {
+  .navigatorContainer {
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+}

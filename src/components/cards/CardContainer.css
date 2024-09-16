@@ -1,0 +1,14 @@
+.card-container {
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    position: relative; /* For absolute positioning of cards */
+}
+
+@media (max-width: 800px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto; /* Allows the container to expand vertically */
+    }
+}
