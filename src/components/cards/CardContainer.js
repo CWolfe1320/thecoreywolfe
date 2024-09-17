@@ -11,14 +11,28 @@ const cards = [
   { image: inspirationImage, title: 'Inspiration' }
 ];
 
-const CardContainer = () => {
+let setState = null;
+
+const CardContainer = ({stateChange}) => {
+  setState = stateChange;
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={handleClick}>
       {cards.map((card, index) => (
-        <Card key={index} image={card.image} title={card.title} />
+        <Card key={index} image={card.image} title={card.title}/>
       ))}
     </div>
   );
+};
+
+const handleClick = (e) => {
+  const card = e.target.closest('.card');
+  if (card) {
+    const titleElement = card.querySelector('.card-title-text');
+    if (titleElement) {
+      const cardTitle = titleElement.textContent;
+      setState(cardTitle);
+    }
+  }
 };
 
 export default CardContainer;
